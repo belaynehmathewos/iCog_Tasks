@@ -1,6 +1,13 @@
 #!/usr/bin/python
 # USAGE
-#python video_facial_landmarks3.py 
+#Correctly to run this code, the dlib's shape_predictor_68_face_landmarks.dat should be placed in the same folder,
+#or a slight change should be needed in 'PREDICTOR_PATH'.
+#...
+#python facial_landmarks_with_annotation.py 
+
+#The code is tested on ubuntu machine
+
+#For Raspberry Pi it will be slightly modified ...
 
 # import the necessary packages
 import dlib
@@ -8,7 +15,6 @@ import cv2
 from imutils.video import VideoStream
 from imutils import face_utils
 import datetime
-#import argparse
 import imutils
 import time
   
@@ -54,7 +60,7 @@ def get_and_anotate_landmarks():
 
 if __name__ == '__main__':
 	print("[INFO] loading predictor...")
-    # initialize the video stream and allow the cammera sensor to warmup
+    	# initialize the video stream and allow the cammera sensor to warmup
 	print("[INFO] camera warming up...")
 	vs = VideoStream(src=0).start()
 	#Try by using vs = captureFromCam(0)
